@@ -5,51 +5,59 @@
 Все задания выполняются в index.js и экспортируются.
 
 ### Задание №1
-Напишите функцию `countAverage()`, которая будет возвращать среднее арифметическое значение элементов массива. На вход функция принимает 1 массив.
 
-    **Пример использования**
+Напишите функцию `getMonth()`, которая будет возвращать строку вида "Месяц Декабрь". На вход функция принимает порядковый номер месяца.
+
+**Пример использования**
 
     ```javascript
-    countAverage([2, 4]); // 3
-    countAverage([0, 1, 2]); // 1
+    getMonth(1); // Месяц Январь
+    getMonth(4); // месяц Апрель
     ```
 
 ### Задание №2
-Напишите функцию `alphaOmega()`, которая будет создавать новый массив, первый элемент которого будет равен первому у входящего массива, а второй - последнему. Воспользуйтесь функцией **at**.
-    
-    **Пример использования**
+
+Напишите функцию `getTotalPrice()`, которая будет считать конечную стоимость массива продуктов c учётом доставки. На вход функция принимает массив продуктов, где каждый продукт имеет следующий вид: [price, name, deliveryPrice].
+
+**Пример использования**
 
     ```javascript
-    countAverage([2, 4, 6, 4]); // [2, 4]
-    countAverage([0, 1, 2]); // [0, 2]
+    getTotalPrice([[ 200, 'Banana', 30], [ 190, 'Apple', 25], [ 350, 'Mango', 20]]); // 815
+    getTotalPrice([[ 1200, 'Monitor', 30], [ 590, 'Keyboard', 25], [ 10350, 'CPU', 20], [ 9150, 'DRAM', 20]]); // 21385
     ```
 
 ### Задание №3
-Напишите функцию `fill()`, которая будет принимать на вход число и элемент, а возвращать массив с таким количеством этих элементов, который указан передаваемым числом. Воспользуйтесь циклом **for** или методом **newArray**
 
-    **Пример использования**
+Напишите функцию `countDuplicates()`, которая определяет, сколько раз каждый элемент встречается в массиве. Функция должна возвращать объект, в котором будут только уникальные ключи и их соответствующие значения.
+**Пример использования**
 
     ```javascript
-    fill(4, 'someString'); // ['someString', 'someString', 'someString', 'someString']
-    fill(2, ['anotherString']); // [['anotherString'], ['anotherString']]
+    countDuplicates(['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple']); // { kiwi: 3, apple: 2, orange: 1 }
+    countDuplicates(['num11','num12','num11','num11','num12','num11','num12',12,13,]); // { 'num11': 4, 'num12': 3, 12: 1, 13: 1 }
     ```
 
 ### Задание №4
-Напишите функцию `fromPairs()`, которая возвращает объект, составленный из значений вложенных массивов. Первое элемент массива - ключ, второй - зачение. Воспользуйтесь встроенной в язык функцией **reduce** у массивов, а также методом **Array.isArray**. Документацию вы найдёте [тут](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) и ещё [тут](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
 
-    *Пример использования**
+Напишите функцию `uniqueItems()`, которая возвращает массив уникальных значений на основе входящего.
+
+**Пример использования**
 
     ```javascript
-    fromPairs([['a', 1], ['b', 2]]); // { 'a': 1, 'b': 2 }
-    fromPairs([['someString', [2, 3]], ['b', 2]]); // { 'someString': [2, 3], 'b': 2 }
+    uniqueItems(['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple']); // [ "kiwi", "apple", "orange" ]
+    uniqueItems(['num11','num12','num11','num11','num12','num11','num12',12,13,]); // [ 'num11', 'num12', 12, 13 ]
     ```
 
 ### Задание №5
-Напишите функцию `intersection()`, которая создаст массив из уникальных значений, которые есть в каждом из предоставленных массивов. Воспользуйтесь встроенной в язык функцией **filter** у массивов, а также методом **Array.from**. Документацию вы найдёте [тут](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) и ещё [тут](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
-    *Пример использования**
+Напишите функцию `getFavoritePizza()`, которая на вход принимает список друзей и их предпочтения в пицце. Функия должна возвращать тот вид, который встречается у друзей чаще остальных.
+
+**Пример использования**
 
     ```javascript
-    intersection([1, 2], [2, 3]); // [2]
-    intersection(['b', 'e', 'c'], ['b', 'b', 'e']); // ['b', 'e']
+    getFavoritePizza([
+        { name: 'alex', pizzas: ['cheese', 'pepperoni'] },
+        { name: 'mike', pizzas: ['salami', 'cheese'] },
+        { name: 'stas', pizzas: ['pepperoni'] },
+        { name: 'anna', pizzas: ['cheese'] }
+    ]); // cheese
     ```
